@@ -3,7 +3,7 @@
 This is **Adapted Material**: a modified version of `ai-memory-vault` by Jared Rhodenizer (upstream: https://github.com/jaredrhod/ai-memory-vault), prepared by **CommandKey AI** and dated **2026-09-22**, revised **2026-09-23** and **2026-10-01**.
 
 - Based on upstream commit: `659bba9c8b351c937dd393b3042801d1ff1b502c` (upstream author `jaredrhod`, dated 2026-08-30).
-- CommandKey AI release: `es-2026.10.01-r3` (the name in `ES_RELEASE`), on branch `es-release`.
+- CommandKey AI release: `es-2026.10.04-r4` (the name in `ES_RELEASE`), on branch `es-release`.
 - Attribution: the original work is by Jared Rhodenizer (@jaredrhod), https://github.com/jaredrhod/ai-memory-vault, licensed under Creative Commons Attribution-ShareAlike 4.0 International (https://creativecommons.org/licenses/by-sa/4.0/). The `LICENSE` file is unchanged.
 - ShareAlike: this adapted version is licensed under the same CC BY-SA 4.0 license. Note the reach: the `CLAUDE.md` and `VAULT-INDEX.md` that the wizard writes onto a client machine are derived from `templates/CLAUDE.md` and `templates/VAULT-INDEX.md` and are themselves Adapted Material under CC BY-SA 4.0. Each of them carries a self-contained attribution comment (author, upstream URL, "Modified by CommandKey AI" with the mirror URL, and the license link), written by the wizard into the client's files and present on the repo templates, so the attribution travels with the file and does not depend on this notice.
 - Each modified file carries a "Modified by CommandKey AI, <date>" HTML comment at the top (after the YAML frontmatter where there is one), dated 2026-09-22 or 2026-09-23, the date of the last CommandKey AI edit to that file.

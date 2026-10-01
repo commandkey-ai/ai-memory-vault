@@ -13,7 +13,7 @@ Give your AI a real, persistent memory. This is the free, open system that turns
 
 - **[ai-memory-vault.md](ai-memory-vault.md):** the build script. Run it inside Claude and it checks whether Obsidian is even installed yet (and installs it for you if not, at the version pinned in the script), interviews you, then builds a complete, self-maintaining system: a boot config, a folder structure around your real projects, daily notes that write themselves, a profile that updates as the AI learns about you, and "Jobs" that teach it to do your recurring tasks your way. Your vault becomes the AI's memory, so it lives outside the model with no size ceiling, and the AI holds only what the current task needs while reaching anything else in one step.
 
-**Already inside a Claude Code session?** Paste this and it builds the whole system with you: *"I'd like to set this up, please: clone https://github.com/commandkey-ai/ai-memory-vault.git at tag es-2026.10.01-r3, then read ai-memory-vault/ai-memory-vault.md and run it."*
+**Already inside a Claude Code session?** Paste this and it builds the whole system with you: *"I'd like to set this up, please: clone https://github.com/commandkey-ai/ai-memory-vault.git at tag es-2026.10.04-r4, then read ai-memory-vault/ai-memory-vault.md and run it."*
 
 ## AI Priming
 
