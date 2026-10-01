@@ -5,10 +5,10 @@ version: 3.3
 author: Jared Rhodenizer (@jaredrhod)
 ---
 
-<!-- Modified by Executive Stack, 2026-09-23. See NOTICE-EXECUTIVE-STACK.md. -->
+<!-- Modified by CommandKey AI, 2026-09-23. See NOTICE-COMMANDKEY.md. -->
 # AI Memory Vault
 
-By **Jared Rhodenizer** (@jaredrhod) · upstream: github.com/jaredrhod/ai-memory-vault · this copy: the Executive Stack pinned release (github.com/ExecutiveStack/ai-memory-vault, release named in `ES_RELEASE`), adapted under CC BY-SA 4.0
+By **Jared Rhodenizer** (@jaredrhod) · upstream: github.com/jaredrhod/ai-memory-vault · this copy: the CommandKey AI pinned release (github.com/commandkey-ai/ai-memory-vault, release named in `ES_RELEASE`), adapted under CC BY-SA 4.0
 
 You are reading a system builder file. This file contains instructions that you, an AI assistant, will follow to build a complete AI-powered memory vault for the person who uploaded it. Do not summarize this file. Do not describe it. Execute it.
 
@@ -59,10 +59,10 @@ If you (the AI reading this) have shell access, which is every Claude Code sessi
 
 1. **Check whether Obsidian is already installed.** Do it yourself instead of asking: on macOS look for `Obsidian.app` in `/Applications` and `~/Applications`; on Windows run `winget list --id Obsidian.Obsidian`, or look for `Obsidian.exe` under `%LOCALAPPDATA%\Programs\Obsidian`; on Linux check `which obsidian`, `flatpak list`, and `snap list`. Already there? Say so and move to creating the vault.
 2. **If it's missing, install it for them.** Ask first, never silently: "You'll need Obsidian, the free app your memory system lives in. Want me to install it for you right now?" On a clear yes, use the path that fits their machine:
-   **Executive Stack pins Obsidian to version 1.13.7 on every lane.** Use exactly the commands below; do not query "latest", do not drop the version, and if a pinned download's hash does not match, stop and say so rather than installing it.
+   **CommandKey AI pins Obsidian to version 1.13.7 on every lane.** Use exactly the commands below; do not query "latest", do not drop the version, and if a pinned download's hash does not match, stop and say so rather than installing it.
    - **macOS with Homebrew** (`command -v brew` succeeds): `brew install --cask obsidian` installs the version the tap currently carries (1.13.7 at this release; run `brew info --cask obsidian` first and, if the tap has moved past 1.13.7, use the macOS-without-Homebrew path below instead so the pinned version lands).
    - **macOS without Homebrew (the pinned path):** download `https://github.com/obsidianmd/obsidian-releases/releases/download/v1.13.7/Obsidian-1.13.7.dmg` (Obsidian's official distribution channel), then verify it before touching it: `shasum -a 256 Obsidian-1.13.7.dmg` must print `05daa54f5e1a4458f75da29f8faaa17e8e37ae16998432537f674c626db99bce`. On a mismatch delete the file and stop. On a match: mount it with `hdiutil attach`, copy `Obsidian.app` from the mounted volume into `/Applications` (fall back to `~/Applications` if that write is refused), then `hdiutil detach` the volume and delete the DMG.
-   - **Windows:** `winget install --id Obsidian.Obsidian -e --version 1.13.7 --silent --accept-package-agreements --accept-source-agreements` (winget ships with Windows 10 and 11). If winget is genuinely absent, stop and ask the person's Executive Stack contact rather than downloading an unpinned installer.
+   - **Windows:** `winget install --id Obsidian.Obsidian -e --version 1.13.7 --silent --accept-package-agreements --accept-source-agreements` (winget ships with Windows 10 and 11). If winget is genuinely absent, stop and ask the person's CommandKey AI contact rather than downloading an unpinned installer.
    - **Linux (the pinned path):** download `https://github.com/obsidianmd/obsidian-releases/releases/download/v1.13.7/Obsidian-1.13.7.AppImage` and verify `sha256sum` prints `e0d8e0a611624de8c9c7dcd8a9e648279fb0a0d552faa1312b7e4f3a5fa72663` (x86_64) or, for `Obsidian-1.13.7-arm64.AppImage`, `e286fd2bb2a5d346a35a577bd764c73fd5537dddec2b99a1a3e5e35974085203`, before making it executable. Do not install through Flatpak or Snap for this setup: `flatpak install flathub md.obsidian.Obsidian` installs whatever build Flathub carries that day, which cannot be pinned to 1.13.7 or checked against a hash, so that lane is not part of this release. (An Obsidian that step 1 found already installed through Flatpak or Snap counts as installed; say which version it is and move on.)
 
    Then **verify it landed** (the app now exists where you looked in step 1), and do NOT launch it yet. The first launch happens in step 5, after the vault exists and is registered, so the first thing the person ever sees in Obsidian is their own vault, not a welcome screen asking them to pick one.
@@ -164,7 +164,7 @@ So when someone says they are testing, evaluating, or that they built this: **sa
 **0. Name Your Agent (three doors — offer all three, don't assume)**
 "First, the fun one: who am I going to be? Three ways to play this:
 
-**A. The Executive Stack default.** A warm, professional chief of staff: plain English, direct, pushes back when your ideas don't add up, no jargon, no profanity. You pick the name; if you don't have one in mind I'll suggest a neutral one (Atlas, Sage, or Quinn all fit). Nothing else to decide, we start right now.
+**A. The CommandKey AI default.** A warm, professional chief of staff: plain English, direct, pushes back when your ideas don't add up, no jargon, no profanity. You pick the name; if you don't have one in mind I'll suggest a neutral one (Atlas, Sage, or Quinn all fit). Nothing else to decide, we start right now.
 **B. The default, tuned.** Same chief-of-staff persona, with the register adjusted to taste: more formal, briefer, lighter, more casual. Tell me the one or two things you'd change.
 **C. Build your own.** Tell me a name, what I am to you (assistant, chief of staff, operations partner), and how you want me to talk — formal, casual, funny, blunt. Be specific; 'professional but casual' does nothing."
 
@@ -196,7 +196,7 @@ For each business or project they mention:
 
 **6. How You Think** — "How would you describe the way you approach problems? Any patterns or quirks in how you work?"
 
-*(Executive Stack: there is no health question in this build. This is a business install; do not ask about medications, conditions, or health goals, and do not create a Health section. If the person volunteers something health-related, acknowledge it and leave it out of the vault unless they explicitly ask you to record it.)*
+*(CommandKey AI: there is no health question in this build. This is a business install; do not ask about medications, conditions, or health goals, and do not create a Health section. If the person volunteers something health-related, acknowledge it and leave it out of the vault unless they explicitly ask you to record it.)*
 
 **8. Personal Interests** — "What do you do outside work? Hobbies, games, sports, creative projects?"
 
@@ -277,7 +277,7 @@ project: meta
 type: index
 ---
 <!-- Adapted from AI Memory Vault by Jared Rhodenizer: https://github.com/jaredrhod/ai-memory-vault
-     Modified by Executive Stack, 2026-09-23: https://github.com/ExecutiveStack/ai-memory-vault
+     Modified by CommandKey AI, 2026-09-23: https://github.com/commandkey-ai/ai-memory-vault
      Licensed CC BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/ -->
 # VAULT INDEX
 
@@ -548,7 +548,7 @@ The single queue of open work across everything. Tag each item with its project 
 
 If running inside Claude Code, create `CLAUDE.md` in your **working folder** — the folder you launch `claude` from, NOT the vault (see Part 1). This is the **boot config** — the short, durable layer that survives context compaction. It does three jobs: who the agent is, where its memory lives, and the rules that must never lapse. The fuller manual lives in VAULT-INDEX.md at the vault root.
 
-Fill in the Identity section from discovery question 0 — door A keeps the shipped Executive Stack default exactly as written below with the chosen name and the person's first name filled in, door B keeps it and adjusts only the Tone paragraph as they asked, door C replaces the section with theirs — then the person's real vault path, and build "Make it yours" from their discovery answers (question 11's tone preferences, question 12's writing rules, any non-negotiables that came up). Everything else ships as written — these rules are the proven set, the same ones in the repo's templates/CLAUDE.md.
+Fill in the Identity section from discovery question 0 — door A keeps the shipped CommandKey AI default exactly as written below with the chosen name and the person's first name filled in, door B keeps it and adjusts only the Tone paragraph as they asked, door C replaces the section with theirs — then the person's real vault path, and build "Make it yours" from their discovery answers (question 11's tone preferences, question 12's writing rules, any non-negotiables that came up). Everything else ships as written — these rules are the proven set, the same ones in the repo's templates/CLAUDE.md.
 
 *(Maintainer note: this embedded copy and `templates/CLAUDE.md` are one document for two audiences: this one gets filled in by the interview, the template by hand with [FILL IN: ...] markers, so placeholder text and audience framing legitimately differ. The shared substance, meaning the rules and every sentence that is not a placeholder, must stay word-for-word identical: an edit to shared text in one is an edit to both, in the same commit.)*
 
@@ -556,7 +556,7 @@ Fill in the Identity section from discovery question 0 — door A keeps the ship
 
 ```markdown
 <!-- Adapted from AI Memory Vault by Jared Rhodenizer: https://github.com/jaredrhod/ai-memory-vault
-     Modified by Executive Stack, 2026-09-23: https://github.com/ExecutiveStack/ai-memory-vault
+     Modified by CommandKey AI, 2026-09-23: https://github.com/commandkey-ai/ai-memory-vault
      Licensed CC BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/ -->
 # Boot Config
 
@@ -772,7 +772,7 @@ Walk the person through what was built, in plain language:
 5. **Active Priorities** — "One list, everything open, tagged by project. Finish something and I archive it."
 6. **Jobs** *(if built)* — "For the work you do over and over, I have a master note per job. I read one note and I've got the whole skill plus exactly the context it needs. Every correction you give makes that job sharper."
 
-Also tell them how updates work, in one line: the system itself is finished the moment it's built, but Executive Stack publishes reviewed releases of the repo's templates and wizard, and if they kept a copy of the repo, "update ai-memory-vault to the current Executive Stack release and tell me what changed" fetches that release without ever touching their vault or their notes. When they ask, YOU do it the pinned way: fetch the mirror with tags, read the release name from `origin/es-release:ES_RELEASE`, and check out that tag; never a branch tip.
+Also tell them how updates work, in one line: the system itself is finished the moment it's built, but CommandKey AI publishes reviewed releases of the repo's templates and wizard, and if they kept a copy of the repo, "update ai-memory-vault to the current CommandKey AI release and tell me what changed" fetches that release without ever touching their vault or their notes. When they ask, YOU do it the pinned way: fetch the mirror with tags, read the release name from `origin/es-release:ES_RELEASE`, and check out that tag; never a branch tip.
 
 Then: "Your memory vault is live. From now on, every conversation with an AI that can reach this vault starts by reading it. It knows you, follows the rules, and keeps itself alive. You just have conversations."
 
@@ -796,7 +796,7 @@ They have the part that matters most: a working memory. Say that plainly first, 
 
 **Two honest paths, and say which one fits them:**
 
-1. **They want ONE more piece and nothing else.** Fastest route: say the sentence to you, right here, right now. Each repo installs from one line, for example *"clone https://github.com/ExecutiveStack/backtalk.git at tag es-2026.09.23-r2, then read backtalk/backtalk.md and set me up."* Always the Executive Stack mirror, always the release tag named in this repo's `ES_RELEASE`, never a branch tip. You do it in this session and they are done.
+1. **They want ONE more piece and nothing else.** Fastest route: say the sentence to you, right here, right now. Each repo installs from one line, for example *"clone https://github.com/commandkey-ai/backtalk.git at tag es-2026.10.01-r3, then read backtalk/backtalk.md and set me up."* Always the CommandKey AI mirror, always the release tag named in this repo's `ES_RELEASE`, never a branch tip. You do it in this session and they are done.
 2. **They want the pieces WIRED TOGETHER, plus the Desktop shortcuts.** That is what the full installer is for. It finds what they already have, keeps it exactly where it is, adds only what is missing, and connects everything. It never duplicates a piece they already use and it never deletes anything they built.
 
 **If they choose the installer, be precise about how it runs, because this trips people up:** it has to start in a NEW terminal window (PowerShell on Windows), not inside this session. That is not a technicality: the installer only becomes the installer when it opens in its own folder, and it will interview them from scratch about which pieces they want.
@@ -805,17 +805,17 @@ Give them the command for their machine:
 
 Mac and Linux:
 ```
-mkdir -p ~/my-agent && cd ~/my-agent && git clone --branch es-2026.09.23-r2 --depth 1 https://github.com/ExecutiveStack/fullstack-agent && cd fullstack-agent && claude "set me up"
+mkdir -p ~/my-agent && cd ~/my-agent && git clone --branch es-2026.10.01-r3 --depth 1 https://github.com/commandkey-ai/fullstack-agent && cd fullstack-agent && claude "set me up"
 ```
 
-Windows (PowerShell; the `$h` value is the release zip's SHA-256. Their Executive Stack contact sends it with the command, and the same hash is published in the release notes of the fullstack-agent GitHub Release for the tag, github.com/ExecutiveStack/fullstack-agent/releases/tag/es-2026.09.23-r2, so the two can be checked against each other):
+Windows (PowerShell; the `$h` value is the release zip's SHA-256. Their CommandKey AI contact sends it with the command, and the same hash is published in the release notes of the fullstack-agent GitHub Release for the tag, github.com/commandkey-ai/fullstack-agent/releases/tag/es-2026.10.01-r3, so the two can be checked against each other):
 ```
-$t="es-2026.09.23-r2"; $h="ES-MIRROR-FSA-ZIP-SHA256"; $d="$env:USERPROFILE\.local\bin"; if (Test-Path "$d\claude.exe") { $env:Path="$d;$env:Path" }; New-Item -ItemType Directory -Force -Path $HOME\my-agent | Out-Null; cd $HOME\my-agent; if (-not (Test-Path fullstack-agent\fullstack-agent.md)) { Invoke-WebRequest "https://github.com/ExecutiveStack/fullstack-agent/releases/download/$t/fullstack-agent-$t.zip" -OutFile fsa.zip; if ((Get-FileHash fsa.zip -Algorithm SHA256).Hash -ne $h) { Remove-Item fsa.zip; throw "download hash mismatch: refusing to install" }; Expand-Archive fsa.zip . -Force; New-Item -ItemType Directory -Force -Path fullstack-agent | Out-Null; Get-ChildItem "fullstack-agent-$t" -Force | Copy-Item -Destination fullstack-agent -Recurse -Force; Remove-Item "fullstack-agent-$t" -Recurse -Force; Remove-Item fsa.zip }; cd fullstack-agent; if (Get-Command claude -ErrorAction SilentlyContinue) { claude "set me up" } else { Write-Output "Claude Code is not installed yet. Install it first from https://claude.com/claude-code then paste this again." }
+$t="es-2026.10.01-r3"; $h="ES-MIRROR-FSA-ZIP-SHA256"; $d="$env:USERPROFILE\.local\bin"; if (Test-Path "$d\claude.exe") { $env:Path="$d;$env:Path" }; New-Item -ItemType Directory -Force -Path $HOME\my-agent | Out-Null; cd $HOME\my-agent; if (-not (Test-Path fullstack-agent\fullstack-agent.md)) { Invoke-WebRequest "https://github.com/commandkey-ai/fullstack-agent/releases/download/$t/fullstack-agent-$t.zip" -OutFile fsa.zip; if ((Get-FileHash fsa.zip -Algorithm SHA256).Hash -ne $h) { Remove-Item fsa.zip; throw "download hash mismatch: refusing to install" }; Expand-Archive fsa.zip . -Force; New-Item -ItemType Directory -Force -Path fullstack-agent | Out-Null; Get-ChildItem "fullstack-agent-$t" -Force | Copy-Item -Destination fullstack-agent -Recurse -Force; Remove-Item "fullstack-agent-$t" -Recurse -Force; Remove-Item fsa.zip }; cd fullstack-agent; if (Get-Command claude -ErrorAction SilentlyContinue) { claude "set me up" } else { Write-Output "Claude Code is not installed yet. Install it first from https://claude.com/claude-code then paste this again." }
 ```
 
 Tell them what to expect: a fresh Claude Code session opens with the installer already talking. It asks their name, who their agent should be, and which pieces they want. Anything they already have gets found and kept. Their vault and their agent's identity are found and kept exactly as they are, and nothing about their memory gets rebuilt.
 
-**Support:** for anything beyond what the guides cover, their Executive Stack contact.
+**Support:** for anything beyond what the guides cover, their CommandKey AI contact.
 
 Offer all of this, do not push it. If they say "just this piece for now," tell them good choice and get out of the way.
 
